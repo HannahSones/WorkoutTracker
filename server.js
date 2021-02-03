@@ -19,7 +19,8 @@ app.use('/', htmlRoutes);
 // Creating database connection
 mongoose.connect(
     process.env.MONGODB_URI || "mongodb://localhost/workoutTracker",
-    { useNewUrlParser: true }
+    { useNewUrlParser: true },
+    { useUnifiedTopology: true }
 );
 
 
