@@ -55,7 +55,7 @@ let workoutSeed = [
     ]
   },
   {
-    day: new Date().setDate(new Date().getDate()-7),
+    day: new Date().setDate(new Date().getDate()-6),
     exercises: [
       {
         type: "cardio",
@@ -66,7 +66,7 @@ let workoutSeed = [
     ]
   },
   {
-    day: new Date().setDate(new Date().getDate()-6),
+    day: new Date().setDate(new Date().getDate()-5),
     exercises: [
       {
         type: "resistance",
@@ -79,7 +79,7 @@ let workoutSeed = [
     ]
   },
   {
-    day: new Date().setDate(new Date().getDate()-5),
+    day: new Date().setDate(new Date().getDate()-4),
     exercises: [
       {
         type: "resistance",
@@ -92,7 +92,7 @@ let workoutSeed = [
     ]
   },
   {
-    day: new Date(new Date().setDate(new Date().getDate() - 4)),
+    day: new Date().setDate(new Date().getDate()-3),
     exercises: [
       {
         type: "resistance",
@@ -105,7 +105,7 @@ let workoutSeed = [
     ]
   },
   {
-    day: new Date(new Date().setDate(new Date().getDate() - 3)),
+    day: new Date().setDate(new Date().getDate()-2),
     exercises: [
       {
         type: "cardio",
@@ -116,7 +116,7 @@ let workoutSeed = [
     ]
   },
   {
-    day: new Date(new Date().setDate(new Date().getDate() - 2)),
+    day: new Date().setDate(new Date().getDate()-1),
     exercises: [
       {
         type: "resistance",
@@ -132,7 +132,7 @@ let workoutSeed = [
 db.workoutTracker.deleteMany({})
   .then(() => db.workoutTracker.collection.insertMany(workoutSeed))
   .then(data => {
-    console.log(data.result.n + " records inserted!");
+    console.log(data.result.n + " records added!");
     process.exit(0);
   })
   .catch(err => {
