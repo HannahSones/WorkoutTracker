@@ -4,7 +4,12 @@ const Workout = require("../models/workout");
 
 
 router.get("/api/workouts", function (req, res) {
-    Workout.find()
+    Workout.aggregate([{
+        $addFields: {
+            totalDuration: { $sum: "$exercises.duration" },
+        }
+    },
+    ])
         .then(data => {
             res.json(data)
         })
@@ -13,6 +18,8 @@ router.get("/api/workouts", function (req, res) {
         })
 });
 
+
+module.exports = router;
 
 // add exercise to the most recent workout plan
 // add exercise to a new workout plan
