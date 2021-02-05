@@ -1,10 +1,14 @@
-const express = require("express");
-const mongoose = require("mongoose");
+const express = require('express');
+const mongoose = require('mongoose');
+
+const dotenv = require('dotenv');
+dotenv.config();
+const dbName = process.env.DATABASE;
 
 const htmlRoutes = require('./routes/htmlRoutes');
 const apiRoutes = require('./routes/apiRoutes');
 
-const PORT = process.env.PORT || 3030;
+const PORT = process.env.PORT || 3000;
 const app = express();
 
 
@@ -18,7 +22,7 @@ app.use('/api', apiRoutes);
 
 // Creating database connection
 mongoose.connect(
-    process.env.MONGODB_URI || "mongodb://localhost/workoutTracker",
+    process.env.MONGODB_URI || `mongodb://localhost/${dbName}`,
     { useNewUrlParser: true },
     { useUnifiedTopology: true }
 );
