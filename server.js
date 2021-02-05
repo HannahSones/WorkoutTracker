@@ -23,8 +23,11 @@ app.use('/api', apiRoutes);
 // Creating database connection
 mongoose.connect(
     process.env.MONGODB_URI || `mongodb://localhost/${dbName}`,
-    { useNewUrlParser: true },
-    { useUnifiedTopology: true }
+    {   useNewUrlParser: true,
+        useUnifiedTopology: true,
+        useCreateIndex: true,
+        useFindAndModify: false
+    }
 );
 
 
