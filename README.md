@@ -28,7 +28,7 @@ The user is able to to view, create and track daily workouts and log multiple ex
 
 ## Functionality  
 
-
+![WorkoutTracker Functionality](https://github.com/HannahSones/WorkoutTracker/blob/main/assets/WorkoutTracker.gif)
 
 The workout tracker allows users to;
 * Add exercises to the most recent workout plan.
